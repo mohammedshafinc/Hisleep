@@ -1,0 +1,9 @@
+<svg width="52" height="59" viewBox="0 0 52 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1" y="-1" width="50" height="45.125" transform="matrix(1 0 0 -1 0 45.125)" stroke="#407DC9" stroke-width="2"/>
+<rect x="1" y="-1" width="35.375" height="6.125" transform="matrix(1 0 0 -1 7.3125 31.7188)" stroke="#407DC9" stroke-width="2"/>
+<rect x="1" y="-1" width="35.375" height="5.71875" transform="matrix(1 0 0 -1 7.3125 19.5312)" stroke="#407DC9" stroke-width="2"/>
+<line y1="-1" x2="12.5938" y2="-1" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.3125 7.71875)" stroke="#407DC9" stroke-width="2"/>
+<line y1="-1" x2="12.5938" y2="-1" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.3125 37.7812)" stroke="#407DC9" stroke-width="2"/>
+<path d="M22.3529 38.5938L36.1562 51.2864L30.3707 51.6541L32.8308 57.2621L28.9926 58.9459L26.5324 53.3378L22.3438 57.3456L22.3529 38.5938Z" fill="white"/>
+<path d="M36.1563 51.2864L22.3529 38.5938L22.3438 57.3456L26.5324 53.3378L28.9926 58.9459L32.8308 57.2621L30.3707 51.6541L36.1563 51.2864ZM31.2599 56.6491L29.6055 57.3749L26.9396 51.298L23.5374 54.5533L23.5439 41.3088L33.2932 50.2736L28.594 50.5722L31.2599 56.6491Z" fill="#407DC9"/>
+</svg>

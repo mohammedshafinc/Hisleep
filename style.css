@@ -1,0 +1,600 @@
+/* .breadcrumbs-wrapper {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    z-index: 100;
+}
+
+.breadcrumbs-wrapper .sl-container {
+    max-width: auto;
+    margin: 0 20px;
+}
+
+@media (max-width: 991px) {
+    .breadcrumbs-wrapper .sl-container {
+        margin: 0 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    .breadcrumbs-wrapper {
+        top: 60px;
+    }
+}
+
+@media (max-width: 991px) {
+    .breadcrumbs-wrapper ul {
+        white-space: nowrap;
+        overflow-x: scroll;
+    }
+
+    .breadcrumbs-wrapper ul::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.breadcrumbs-wrapper ul li {
+    position: relative;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.breadcrumbs-wrapper ul li a {
+    position: relative;
+    display: block;
+    font-family: "Intelo Regular", sans-serif;
+    font-size: 9px;
+    line-height: 110%;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #062B4E;
+    padding-right: 12px;
+}
+
+@media (max-width: 991px) {
+    .breadcrumbs-wrapper ul li a {
+        font-size: 8px;
+    }
+}
+
+.breadcrumbs-wrapper ul li a::after {
+    content: '';
+    position: absolute;
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNCA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAwLjVMMy41IDNMMSA1LjUiIHN0cm9rZT0iIzA2MkI0RSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=") no-repeat;
+    background-position: center 1px;
+    height: 100%;
+    width: 5px;
+    right: 0;
+    top: 0;
+}
+
+.breadcrumbs-wrapper ul li:last-child a::after {
+    content: unset;
+}
+
+.login-signup-form h2 {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+    .login-signup-form h2 {
+        margin-bottom: 15px;
+    }
+}
+
+.login-signup-form p {
+    font-size: 20px;
+    line-height: 28px;
+    max-width: 506px;
+}
+
+@media (max-width: 991px) {
+    .login-signup-form p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+.login-signup-form .form-wrapper {
+    z-index: 1;
+    margin-top: 60px;
+    padding: 55px 0 80px 70px;
+    background: #F5F5F5;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 991px) {
+    .login-signup-form .form-wrapper {
+        padding: 16px 20px 45px 16px;
+        z-index: 1;
+    }
+}
+
+.login-signup-form .form-wrapper .login-form {
+    z-index: 1;
+}
+
+.login-signup-form .form-wrapper::after {
+    content: '';
+    position: absolute;
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE0NiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgMTE0NiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDApIj4KPHBhdGggZD0iTTg0OS4yNTkgMjAyLjEyMUM4MzguMzcxIDIxNi4yMjMgODI1LjMwNiAyMjguNTYzIDgxNC40MTggMjQwLjkwM0M5MTYuNzY1IDQxMC4xMzUgMTA0My4wNyA1MjIuOTU3IDExMjUuODIgNTA1LjMyOUMxMjIxLjYzIDQ4NC4xNzUgMTI0MS4yMyAyNzAuODcxIDExNjAuNjYgMjcuNTk5OUMxMTA2LjIyIC0xMzYuMzQ0IDEwMzIuMTggLTI3NS42MDggOTQ1LjA3NCAtMzM1LjU0NEMxMDcxLjM4IC0yNDMuODc3IDEwMzIuMTggLTkuNDE5NjIgODQ5LjI1OSAyMDIuMTIxWiIgZmlsbD0iIzg5QUVERSIvPgo8cGF0aCBkPSJNMzU5LjI5OSA0NjguMzA5QzMzMC45OSA0NzUuMzYgMzAyLjY4MSA0NzMuNTk3IDI3Ni41NSA0NjQuNzgzQzQxOC4wOTUgNTEwLjYxNyA2NDIuMzg4IDQxOC45NDkgODE0LjQxOSAyNDAuOTAzQzc5OS4xNzUgMjE3Ljk4NiA3ODYuMTEgMTkxLjU0MyA3NzMuMDQ0IDE2Ni44NjRDNjU3LjYzMSAtNjUuODMwOSA2NTEuMDk4IC0zMzAuMjU2IDgxMi4yNDEgLTM2NS41MTNDODQwLjU1IC0zNzAuODAyIDg2Ni42ODEgLTM3MC44MDIgODkyLjgxMiAtMzYxLjk4N0M3NTMuNDQ2IC00MDcuODIxIDUzMy41MDggLTMxNy45MTcgMzYzLjY1NCAtMTQ2LjkyMUMzNzYuNzIgLTEyNS43NjcgMzg3LjYwOCAtMTAyLjg1MSA0MDAuNjc0IC03OS45MzM2QzUxOC4yNjQgMTU5LjgxMiA1MjQuNzk3IDQzMy4wNTIgMzU5LjI5OSA0NjguMzA5WiIgZmlsbD0iI0RBMjgxQyIvPgo8cGF0aCBkPSJNMzIwLjA5OCAtOTkuMzI0NkMzMzUuMzQxIC0xMTUuMTkgMzQ4Ljc2MSAtMTMwLjk1OCAzNjQuMDA0IC0xNDYuODIzQzI1OS40NzkgLTMyNi42MzIgMTI0LjExMyAtNDQ4LjM2NiAzNy4wMDkgLTQyOC45NzVDLTYwLjk4MzIgLTQwNy44MjEgLTgyLjc1OTIgLTE4Ny40NjcgLTAuMDEwMjE0NSA2Mi44NTYzQzU4Ljc4NTEgMjQyLjY2NiAxNDEuNTM0IDM5Mi41MDcgMjM5LjUyNiA0NDguOTE4Qzk1LjgwNDMgMzY0LjMwMSAxMzAuNjQ2IDExOS4yNjcgMzIwLjA5OCAtOTkuMzI0NloiIGZpbGw9IiNGQUI5MEUiLz4KPHBhdGggZD0iTTgxMi4yNDEgLTM2NS41MTNDNjUxLjA5OSAtMzMwLjI1NyA2NTcuNjMxIC02NS44MzEgNzczLjA0NSAxNjYuODYzQzc4Ni4xMSAxOTMuMzA2IDc5OS4xNzYgMjE3Ljk4NiA4MTQuNDE5IDI0MC45MDJDODI3LjQ4NSAyMjguNTYzIDgzOC4zNzMgMjE0LjQ2IDg0OS4yNjEgMjAyLjEyQzEwMzIuMTggLTkuNDIwMjkgMTA3MS4zOCAtMjQzLjg3OCA5NDIuODk4IC0zMzUuNTQ1QzkzMi4wMSAtMzQyLjU5NiA5MTIuNDExIC0zNTQuOTM2IDg5MC42MzUgLTM2MS45ODhDODY2LjY4MiAtMzcwLjgwMiA4NDAuNTUgLTM3Mi41NjUgODEyLjI0MSAtMzY1LjUxM1oiIGZpbGw9IiM4QzQ2OTkiLz4KPHBhdGggZD0iTTI3Ni41NDkgNDY0Ljc4MkMzMDIuNjggNDczLjU5NyAzMzAuOTg5IDQ3NS4zNiAzNTkuMjk4IDQ2OC4zMDhDNTI0Ljc5NiA0MzMuMDUxIDUyMC4zMTYgMTU5LjQ3OCA0MDAuNTQ4IC04MC4yNjgzQzM4OS42NiAtMTAzLjE4NSAzNzcuMDczIC0xMjUuNjY5IDM2NC4wMDcgLTE0Ni44MjNDMzYzLjkyNiAtMTQ2Ljk1NSAzMzAuOTg5IC0xMTUuMTkxIDMxNy45MjMgLTk5LjMyNTNDMTI4LjQ3MiAxMTkuMjY2IDkzLjYzMDIgMzY0LjMwMSAyMzkuNTMgNDQ3LjE1NEMyNDEuNzA3IDQ0OC45MTcgMjU2Ljk1IDQ1Ny43MzEgMjc2LjU0OSA0NjQuNzgyWiIgZmlsbD0iI0ZGNjYwMCIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwIj4KPHJlY3Qgd2lkdGg9IjYuMDAwMDYiIGhlaWdodD0iMTI2MiIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyMzgpIHJvdGF0ZSg5MCkiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K") no-repeat;
+    bottom: 0;
+    left: -10px;
+    right: -10px;
+    height: 6px;
+    background-size: 100%;
+}
+
+@media (max-width: 991px) {
+    .login-signup-form .form-wrapper::after {
+        background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzI4IiBoZWlnaHQ9IjYiIHZpZXdCb3g9IjAgMCAzMjggNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+CjxwYXRoIGQ9Ik0yNDAuNzkgMjAyLjEyQzIzNy40NTEgMjE2LjIyMyAyMzMuNDQ0IDIyOC41NjIgMjMwLjEwNSAyNDAuOTAyQzI2MS40OTEgNDEwLjEzMyAzMDAuMjIyIDUyMi45NTQgMzI1LjU5NyA1MDUuMzI2QzM1NC45OCA0ODQuMTcyIDM2MC45OSAyNzAuODcgMzM2LjI4MiAyNy42MDAyQzMxOS41ODcgLTEzNi4zNDMgMjk2Ljg4MyAtMjc1LjYwNiAyNzAuMTcyIC0zMzUuNTQyQzMwOC45MDMgLTI0My44NzUgMjk2Ljg4MyAtOS40MTkwNyAyNDAuNzkgMjAyLjEyWiIgZmlsbD0iIzg5QUVERSIvPgo8cGF0aCBkPSJNOTAuNTM5NCA0NjguMzA2QzgxLjg1ODMgNDc1LjM1NyA3My4xNzcyIDQ3My41OTQgNjUuMTYzOSA0NjQuNzhDMTA4LjU2OSA1MTAuNjEzIDE3Ny4zNSA0MTguOTQ3IDIzMC4xMDUgMjQwLjkwMUMyMjUuNDMgMjE3Ljk4NCAyMjEuNDIzIDE5MS41NDIgMjE3LjQxNyAxNjYuODYzQzE4Mi4wMjUgLTY1LjgzMDQgMTgwLjAyMSAtMzMwLjI1NCAyMjkuNDM3IC0zNjUuNTExQzIzOC4xMTggLTM3MC43OTkgMjQ2LjEzMSAtMzcwLjc5OSAyNTQuMTQ1IC0zNjEuOTg1QzIxMS40MDcgLTQwNy44MTggMTQzLjk2MSAtMzE3LjkxNCA5MS44NzQ5IC0xNDYuOTJDOTUuODgxNiAtMTI1Ljc2NiA5OS4yMjA1IC0xMDIuODUgMTAzLjIyNyAtNzkuOTMzQzEzOS4yODcgMTU5LjgxMSAxNDEuMjkgNDMzLjA0OSA5MC41Mzk0IDQ2OC4zMDZaIiBmaWxsPSIjREEyODFDIi8+CjxwYXRoIGQ9Ik03OC41MjAyIC05OS4zMjM5QzgzLjE5NDYgLTExNS4xODkgODcuMzA5OSAtMTMwLjk1NyA5MS45ODQ0IC0xNDYuODIyQzU5LjkzMTEgLTMyNi42MyAxOC40MjA0IC00NDguMzYzIC04LjI5MDU5IC00MjguOTcyQy0zOC4zNDA1IC00MDcuODE4IC00NS4wMTgyIC0xODcuNDY1IC0xOS42NDI4IDYyLjg1NkMtMS42MTI4NCAyNDIuNjY0IDIzLjc2MjYgMzkyLjUwNCA1My44MTI1IDQ0OC45MTVDOS43MzkzNCAzNjQuMjk5IDIwLjQyMzcgMTE5LjI2NiA3OC41MjAyIC05OS4zMjM5WiIgZmlsbD0iI0ZBQjkwRSIvPgo8cGF0aCBkPSJNMjI5LjQzNyAtMzY1LjUxMUMxODAuMDIyIC0zMzAuMjU0IDE4Mi4wMjUgLTY1LjgzMDUgMjE3LjQxNyAxNjYuODYyQzIyMS40MjQgMTkzLjMwNSAyMjUuNDMgMjE3Ljk4NCAyMzAuMTA1IDI0MC45MDFDMjM0LjExMiAyMjguNTYxIDIzNy40NSAyMTQuNDU5IDI0MC43ODkgMjAyLjExOUMyOTYuODgyIC05LjQyMDE0IDMwOC45MDIgLTI0My44NzYgMjY5LjUwNCAtMzM1LjU0M0MyNjYuMTY1IC0zNDIuNTk0IDI2MC4xNTUgLTM1NC45MzQgMjUzLjQ3NyAtMzYxLjk4NUMyNDYuMTMyIC0zNzAuNzk5IDIzOC4xMTggLTM3Mi41NjIgMjI5LjQzNyAtMzY1LjUxMVoiIGZpbGw9IiM4QzQ2OTkiLz4KPHBhdGggZD0iTTY1LjE2NTEgNDY0Ljc4QzczLjE3ODQgNDczLjU5NCA4MS44NTk1IDQ3NS4zNTcgOTAuNTQwNiA0NjguMzA1QzE0MS4yOTIgNDMzLjA0OSAxMzkuOTE4IDE1OS40NzcgMTAzLjE5IC04MC4yNjc1Qzk5Ljg1MTIgLTEwMy4xODQgOTUuOTkxNSAtMTI1LjY2OCA5MS45ODQ4IC0xNDYuODIyQzkxLjk1OTggLTE0Ni45NTQgODEuODU5NSAtMTE1LjE5IDc3Ljg1MjggLTk5LjMyNDRDMTkuNzU2MyAxMTkuMjY2IDkuMDcxOTMgMzY0LjI5OSA1My44MTI5IDQ0Ny4xNTFDNTQuNDgwNyA0NDguOTE0IDU5LjE1NTEgNDU3LjcyOCA2NS4xNjUxIDQ2NC43OFoiIGZpbGw9IiNGRjY2MDAiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMCI+CjxyZWN0IHdpZHRoPSI2LjAwMDAyIiBoZWlnaHQ9IjM4NyIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM2MCkgcm90YXRlKDkwKSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=") no-repeat;
+        background-size: 100%;
+    }
+}
+
+.login-signup-form .form-wrapper h3 {
+    font-family: "Intelo Regular", sans-serif;
+}
+
+@media (max-width: 991px) {
+    .login-signup-form .form-wrapper h3 {
+        font-size: 28px;
+        line-height: 120%;
+    }
+}
+
+.login-signup-form .form-wrapper label {
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .login-signup-form .form-wrapper .checkbox-label {
+        font-size: 13px;
+    }
+}
+
+.login-signup-form .form-wrapper form {
+    margin-top: 40px;
+}
+
+.login-signup-form .form-wrapper form .form-fields {
+    max-width: 390px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+    .login-signup-form .form-wrapper form {
+        margin-top: 25px;
+    }
+}
+
+.login-signup-form .form-wrapper .form-selection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0 70px;
+}
+
+.login-signup-form .form-wrapper .remember-me {
+    font-family: "Intelo Light", sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+    color: #062B4E;
+}
+
+.login-signup-form .form-wrapper a {
+    display: block;
+    font-family: "Intelo Light", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: underline;
+    color: #062B4E;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 991px) {
+    .login-signup-form .form-wrapper a {
+        font-size: 14px;
+    }
+}
+
+.login-signup-form .form-wrapper .site-btn {
+    margin-bottom: 16px;
+}
+
+.login-signup-form .form-wrapper .resend-otp-btn {
+    background: #E5E5E5;
+}
+
+.login-signup-form .form-wrapper .guest-link {
+    margin-bottom: 8px;
+}
+
+.login-signup-form .form-wrapper .form-hero-blob {
+    position: absolute;
+    right: -260px;
+    top: -30px;
+    z-index: -1;
+}
+
+@media (max-width: 991px) {
+    .login-signup-form .form-wrapper .form-hero-blob {
+        right: -450px;
+        top: -50px;
+        z-index: -1;
+    }
+}
+
+.login-signup-form .form-wrapper .form-hero-blob .blob-combo-wrap.blob-combo-2-wrap .blob:nth-child(1) {
+    height: 700px;
+    top: 8%;
+    left: 3%;
+    width: 600px;
+}
+
+.login-signup-form .form-wrapper .form-hero-blob .blob-combo-wrap.blob-combo-2-wrap .blob:nth-child(2) {
+    width: 500px;
+    left: 60%;
+    top: -5.5%;
+}
+
+.login-signup-form .form-wrapper .form-hero-blob.signup-blob {
+    position: absolute;
+    right: 0;
+    top: unset;
+    bottom: -380px;
+}
+
+@media (max-width: 991px) {
+    .login-signup-form .form-wrapper .form-hero-blob.signup-blob {
+        right: -450px;
+        bottom: -100px;
+    }
+}
+
+@media (max-width: 991px) {
+    .login-signup-form .form-wrapper .form-hero-blob.signup-blob .blob-combo-wrap {
+        transform: rotate(-160deg);
+    }
+}
+
+.login-signup-form .form-wrapper .form-hero-blob.signup-blob .blob-combo-wrap.blob-combo-2-wrap .blob:nth-child(1) {
+    height: 800px;
+    top: -5%;
+    left: -7%;
+    width: 580px;
+    transform: rotate(165deg);
+}
+
+.login-signup-form .form-wrapper .form-hero-blob.signup-blob .blob-combo-wrap.blob-combo-2-wrap .blob:nth-child(2) {
+    width: 500px;
+    left: 35%;
+    top: 25%;
+    transform: rotate(-115deg);
+}
+
+.login-signup-form .form-wrapper .term-condition {
+    font-family: "Intelo Light", sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+    color: #062B4E;
+    margin: 5px 0 60px;
+}
+
+@media (max-width: 991px) {
+    .login-signup-form .form-wrapper .term-condition {
+        margin: 5px 0 40px;
+    }
+}
+
+.reviews-slider-pointer-ul {
+    margin-top: 80px;
+}
+
+@media (min-width: 992px) {
+    .reviews-slider-pointer-ul {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+    }
+}
+
+@media (max-width: 991px) {
+    .reviews-slider-pointer-ul {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 992px) {
+    .reviews-slider-pointer-ul {
+        white-space: nowrap;
+        width: auto;
+        display: block;
+        overflow-x: scroll;
+    }
+}
+
+@media (max-width: 991px) {
+    .reviews-slider-pointer-ul::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.reviews-slider-pointer-ul li {
+    position: relative;
+    display: inline-block;
+    font-family: "Intelo Bold", sans-serif;
+    font-size: 14px;
+    line-height: 158.8%;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: #407DC9;
+    padding: 18px 7px;
+    flex-grow: 1;
+}
+
+.reviews-slider-pointer-ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reviews-slider-pointer-ul li:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+    .reviews-slider-pointer-ul li {
+        padding: 0;
+        font-size: 11px;
+        line-height: 158.8%;
+        margin-right: 20px;
+        margin-bottom: 12px;
+    }
+
+    .reviews-slider-pointer-ul li:nth-child(even) {
+        margin-right: 0;
+    }
+}
+
+.reviews-slider-pointer-ul li:after {
+    content: '';
+    position: absolute;
+    left: 0px !important;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 1px;
+    background: #E5E5E5;
+}
+
+@media (max-width: 991px) {
+    .reviews-slider-pointer-ul li:after {
+        content: none;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .reviews-slider-pointer-ul li:after {
+        left: -40px;
+    }
+}
+
+.reviews-slider-pointer-ul li img {
+    margin-right: 14px;
+    vertical-align: top;
+}
+
+.reviews-slider-pointer-ul li:last-child:before {
+    content: '';
+    position: absolute;
+    right: 0px !important;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 1px;
+    background: #E5E5E5;
+}
+
+@media (max-width: 991px) {
+    .reviews-slider-pointer-ul li:last-child:before {
+        right: 0;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .reviews-slider-pointer-ul li:last-child:before {
+        right: -40px;
+    }
+}
+
+@media (max-width: 991px) {
+    .reviews-slider-pointer-ul li:last-child:before {
+        content: unset;
+    }
+}
+
+.store-locator-hero li:nth-child(1) {
+    color: #FF6600;
+}
+
+.store-locator-hero li:nth-child(2) {
+    color: #DA281C;
+}
+
+.store-locator-hero li:nth-child(3) {
+    color: #8C4699;
+}
+
+.warranty-registration-section {
+    margin-top: 110px;
+}
+
+.warranty-registration-page .warranty-grid {
+    margin: 75px 0 60px;
+    grid-template-columns: 5fr 3.5fr 3.5fr;
+}
+
+@media (max-width: 991px) {
+    .warranty-registration-page .warranty-grid {
+        grid-template-columns: 1fr;
+        margin: 15px 0 50px;
+        grid-row-gap: 15px;
+    }
+}
+
+.warranty-registration-page .warranty-grid h3 {
+    font-family: "Intelo Light", sans-serif;
+    font-size: 28px;
+    line-height: 31px;
+    max-width: 385px;
+}
+
+@media (max-width: 991px) {
+    .warranty-registration-page .warranty-grid h3 {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 5px;
+    }
+}
+
+.warranty-registration-page .warranty-grid .warranty-step {
+    position: relative;
+    padding-left: 65px;
+    font-family: "Intelo Light", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: #062B4E;
+    max-width: 250px;
+}
+
+@media (max-width: 991px) {
+    .warranty-registration-page .warranty-grid .warranty-step {
+        padding-left: 55px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.warranty-registration-page .warranty-grid .warranty-step .step-text {
+    display: block;
+    margin-bottom: 3px;
+    font-family: "Intelo Bold", sans-serif;
+    text-transform: uppercase;
+    color: #062B4E;
+    letter-spacing: 0.06em;
+}
+
+.warranty-registration-page .warranty-grid .warranty-step img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: 52px;
+}
+
+@media (max-width: 991px) {
+    .warranty-registration-page .warranty-grid .warranty-step img {
+        max-width: 38px;
+    }
+}
+
+.warranty-registration-page .form-wrapper {
+    z-index: 1;
+}
+
+.warranty-registration-page .form-wrapper .purchased-from-field {
+    display: flex;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    gap: 35px;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    .warranty-registration-page .form-wrapper .purchased-from-field {
+        display: block;
+        margin: 16px 0 24px;
+    }
+}
+
+.warranty-registration-page .form-wrapper .purchased-from-field #specify {
+    max-width: 255px;
+    margin: 0;
+}
+
+@media (max-width: 991px) {
+    .warranty-registration-page .form-wrapper .purchased-from-field #specify {
+        max-width: 100%;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    .warranty-registration-page .form-wrapper .purchased-from-field label.radio-btn {
+        margin-right: 30px;
+        margin-bottom: 8px;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 991px) {
+    .warranty-registration-page .form-wrapper .purchased-from-field label.radio-btn input[type="radio"] {
+        top: 50%;
+    }
+}
+
+.warranty-registration-page .form-wrapper select {
+    font-size: 16px;
+}
+
+.warranty-registration-page form {
+    max-width: 800px !important;
+    margin-top: 5px !important;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .warranty-registration-page form {
+        max-width: 720px;
+    }
+}
+
+.warranty-registration-page .form-wrapper .term-condition {
+    margin: 8px 0 13px;
+}
+
+.warranty-registration-page .form-hero-blob {
+    z-index: -1;
+}
+
+.warranty-registration-page .reviews-slider-pointer-ul li:nth-child(1) {
+    color: #FF6600;
+}
+
+.warranty-registration-page .reviews-slider-pointer-ul li:nth-child(2) {
+    color: #DA281C;
+}
+
+.warranty-registration-page .reviews-slider-pointer-ul li:nth-child(3) {
+    color: #8C4699;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .warranty-registration-page .reviews-slider-pointer-ul li::after {
+        left: -10px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .warranty-registration-page .reviews-slider-pointer-ul li:last-child:before {
+        right: -10px;
+    }
+}
+
+.dealers-fields label, .dealers-fields select {
+    width: 100%;
+}
+
+ */
