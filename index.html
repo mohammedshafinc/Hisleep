@@ -41,7 +41,8 @@
         <link rel="stylesheet" type="text/css" href="https://mysleepwell.com/css/slick.min.css" media="all">
       
         <link rel="stylesheet" type="text/css" href="https://mysleepwell.com/css/page/warranty-registration.css">
-        <script src="https://mysleepwell.com/static/js/jquery.min.js" rel="preload"></script>
+        <script src="https://mysleepcwell.com/static/js/jquery.min.js" rel="preload"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
     </head>
     <body class="js-loading">
@@ -99,24 +100,25 @@
                     </div>
                 </div>
                 <div class="sl-container login-signup-form warranty-registration-form">
+                    <form action="" id="submit-form">
                     <div class="form-wrapper">
                         <h3>Purchased from</h3>
                         <div style="max-width: 800px" action="#">
                             <div class="purchased-from-field">
                                 <label for="MYSLEEPWELL" class="radio-btn">
-                                    <input type="radio" name="purchased-from-dynamic" value='2' data-name="MYSLEEPWELL" checked id="MYSLEEPWELL">
+                                    <input type="radio" name="purchased-from-dynamic" value='hisleep website' data-name="MYSLEEPWELL" checked id="MYSLEEPWELL">
                                     <span class="purchased-from">Hisleep Website</span>
                                 </label>
                                 <label for="amazon" class="radio-btn">
-                                    <input type="radio" name="purchased-from-dynamic" value='1' data-name="AMAZON" id="amazon">
+                                    <input type="radio" name="purchased-from-dynamic" value='amazon' data-name="AMAZON" id="amazon">
                                     <span class="purchased-from">Amazon</span>
                                 </label>
                                 <label for="flipkart" class="radio-btn">
-                                    <input type="radio" name="purchased-from-dynamic" value='2' data-name="FLIPKART" id="flipkart">
+                                    <input type="radio" name="purchased-from-dynamic" value='flipkart' data-name="FLIPKART" id="flipkart">
                                     <span class="purchased-from">Flipkart</span>
                                 </label>
                                 <label for="flipkart" class="radio-btn">
-                                    <input type="radio" name="purchased-from-dynamic" value='2' data-name="FLIPKART" id="flipkart">
+                                    <input type="radio" name="purchased-from-dynamic" value='2' data-name="retail store" id="flipkart">
                                     <span class="purchased-from">Retail Store</span>
                                 </label>
                               
@@ -191,9 +193,10 @@
                                     <input type="text" name="country" id="country" placeholder="Enter Country" disabled>
                                 </label>
                             </div>
+                        </form>
                             <div class="term-condition">Your information is confidential with us and will not be shared with
                             others.</div>
-                            <input type="button" value="Register" class="site-btn" onclick="warrantySubmit()">
+                            <input type="button" value="Register" class="site-btn" id="submit">
                         </div>
                         <div class="form-hero-blob">
                             <div class="blob-combo-wrap blob-combo-2-wrap">
@@ -708,7 +711,59 @@
 </style>
 <script>
 
+//  function warrantySubmit(){
+    let purchasedFrom = document.querySelector('input[name="purchased-from-dynamic"]:checked').value;
+            
+            // Get text input values
+            let dealerName = document.getElementById("dealerName").value;
+            let serialNo = document.getElementById("serialNo").value;
+            let purchaseDate = document.getElementById("purchaseDate").value;
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+            let emailId = document.getElementById("emailId").value;
+            let mobileNo = document.getElementById("mobileNo").value;
+            let pinCode = document.getElementById("pinCode").value;
+            let city = document.getElementById("city").value;
+            let state = document.getElementById("state").value;
+            let country = document.getElementById("country").value;
 
+              // Create object to hold form data
+              let formData = {
+                purchasedFrom,
+                dealerName,
+                serialNo,
+                purchaseDate,
+                firstName,
+                lastName,
+                emailId,
+                mobileNo,
+                pinCode,
+                city,
+                state,
+                country,
+              
+            };
+
+            fetch('https://script.google.com/macros/s/AKfycbwDLAjiMce0bQGNxVxuu9TiESdTSHsj_DfQFKqwCckQ/dev', {  // Replace with your actual Web App URL
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData),
+        mode: 'cors'  
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Form submitted successfully:', data);
+        alert("Form submitted! Check the Google Sheet for data.");
+    })
+    .catch(error => {
+        console.error('Error submitting the form:', error);
+        alert("There was an error submitting the form.");
+    });
+}
+
+document.getElementById('purchaseDate').max = new Date().toISOString().split("T")[0]
 
 $(document).ready(function () {
     $('#pinCode').on('input', function () {
