@@ -196,7 +196,7 @@
                         </form>
                             <div class="term-condition">Your information is confidential with us and will not be shared with
                             others.</div>
-                            <input type="button" value="Register" class="site-btn" id="submit">
+                            <input type="button" value="Register" class="site-btn" id="submit" onclick=warrantySubmit()>
                         </div>
                         <div class="form-hero-blob">
                             <div class="blob-combo-wrap blob-combo-2-wrap">
@@ -711,7 +711,7 @@
 </style>
 <script>
 
-//  function warrantySubmit(){
+ function warrantySubmit(){
     let purchasedFrom = document.querySelector('input[name="purchased-from-dynamic"]:checked').value;
             
             // Get text input values
@@ -744,7 +744,7 @@
               
             };
 
-            fetch('https://script.google.com/macros/s/AKfycbwDLAjiMce0bQGNxVxuu9TiESdTSHsj_DfQFKqwCckQ/dev', {  // Replace with your actual Web App URL
+            fetch('https://script.google.com/macros/s/AKfycbw-Etc-8LCE23QlkvLB0yIuvpaklfXjZJFimBxmlVc8IWPiugs_yF0NvcjKreqEqSXK9g/exec', {  // Replace with your actual Web App URL
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
