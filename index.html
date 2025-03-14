@@ -179,13 +179,7 @@
                                                 <span class="mobileNo" style="color: red;font:bold"></span>
                                             </label>
                                         </div>
-                                        <div class="dealers-fields two-fields" id="only-ebo">
-                                            <label class="select-label" for="fileInput">
-                                                <div class="field-label"> upload Your Bill</div>
-                                                <input type="file" name="fileInput" id="fileInput"
-                                                    placeholder="billupload">
-                                            </label>
-                                        </div>
+                                      
                                         <div class="two-fields">
                                             <label for="pinCode">
                                                 <div class="field-label">Pincode*</div>
@@ -218,10 +212,12 @@
                                 others.</div>
                             <input type="button" value="Register" class="site-btn" id="submit" onclick=warrantySubmit()>
                         </div>
-                        <div class="form-hero-blob">
+                        <!-- <div class="form-hero-blob">
                             <div class="blob-combo-wrap blob-combo-2-wrap">
                                 <div class="blob-combo blob-combo-2">
-                                    <div class="blob blob-four"></div>
+                                    <div class="blob blob-four">
+                                        <img src="./src/images/Image (2).jpg" alt="">
+                                    </div>
                                     <div class="blob blob-five"></div>
                                 </div>
                                 <div class="blob-combo-white blob-combo-2-white">
@@ -229,15 +225,19 @@
                                     <div class="blob blob-five"></div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
             </div>
         </div>
 
+
+
         </section>
+      
+
         </div>
 
-
-
+        <footer>© HISLEEP, All Right Reserved. Designed By <a href="https://wydexmedia.com/desktop.html">WydexMedia</a></footer>
+       
 
 
         <script>
@@ -246,6 +246,7 @@
             });
         </script>
         <style>
+            
             .body {
                 scroll-behavior: smooth;
             }
@@ -290,111 +291,67 @@
         </style>
         <script>
 
-            function warrantySubmit() {
-                // Show loading indicator
-                const loadingOverlay = document.createElement('div');
-                loadingOverlay.className = 'overlay-loader';
-                loadingOverlay.innerHTML = `
-    <div>
-      <div class="loader-horizontal"></div>
-      <div class="loader-text">Processing your request...</div>
-    </div>
-  `;
-                document.body.appendChild(loadingOverlay);
-
-                // Get form data
-                const form = document.getElementById('submit-form');
-                const formData = new FormData(form);
-                formData.append('state', document.getElementById('state').value);
-                formData.append('country', document.getElementById('country').value);
-                formData.forEach((e) => console.log(e))
-
-                upload()
-                // Create URL with parameters
-                const scriptURL = 'https://script.google.com/macros/s/AKfycbxtyimz_2GR0x9S7D6qkK0-EFRD-tzT1YI4QWg7_PL2vPWCNKgCCtpWNzxidbmElbwF/exec';
-                const url = new URL(scriptURL);
-
-                // Append form data to URL as query parameters
-                for (const pair of formData.entries()) {
-                    url.searchParams.append(pair[0], pair[1]);
-                }
-
-                // Use a hidden iframe to submit the form (avoids CORS issues)
-                const iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                document.body.appendChild(iframe);
-
-                iframe.onload = function () {
-                    // Remove loading overlay
-                    document.body.removeChild(loadingOverlay);
-
-                    // Show success message
-                    const successSnackbar = document.querySelector('.warrantypopCls');
-                    const successMessage = document.querySelector('.warrantyregCls');
-                    successMessage.textContent = "Warranty registration successful!";
-                    successSnackbar.style.display = 'block';
-
-                    // Reset form
-                    form.reset();
-
-                    // Remove iframe after a delay
-                    setTimeout(() => {
-                        document.body.removeChild(iframe);
-                        successSnackbar.style.display = 'none';
-                    }, 3000);
-                };
-
-                iframe.onerror = function () {
-                    // Remove loading overlay
-                    document.body.removeChild(loadingOverlay);
-
-                    // Show error message
-                    const errorSnackbar = document.querySelector('.form-message-danger');
-                    const errorMessage = errorSnackbar.querySelector('.snackbar-message');
-                    errorMessage.textContent = "There was an error submitting your warranty registration. Please try again.";
-                    errorSnackbar.style.display = 'block';
-
-                    // Remove iframe after a delay
-                    setTimeout(() => {
-                        document.body.removeChild(iframe);
-                        errorSnackbar.style.display = 'none';
-                    }, 3000);
-                };
-
-                // Set the iframe src to submit the form
-                iframe.src = url.toString();
-            }
-
-
-            function upload() {
-                const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwlQ8Z9tcARvjm85GXmpD8bye-gfNnMqC74LN8XBX0t3Mt3GKWQP_WKDDp1bdIzskHs/exec"; // Replace with your Web App URL
-
-                function uploadFile() {
-                    const fileInput = document.getElementById("fileInput");
-                    if (fileInput.files.length === 0) {
-                        alert("Please select an image first.");
-                        return;
-                    }
-
-                    const file = fileInput.files[0];
-                    const formData = new FormData();
-                    formData.append("file", file);
-
-                    fetch(WEB_APP_URL, {
-                        method: "POST",
-                        body: formData
-                    })
-                        .then(response => response.text())
-                        .then(data => {
-                            alert(data);
-                        })
-                        .catch(error => {
-                            console.error("Error uploading file:", error);
-                            alert("Failed to upload file.");
-                        });
-                }
-            }
-
+function warrantySubmit() {
+   // Show loading indicator
+   const loadingOverlay = document.createElement('div');
+   loadingOverlay.className = 'overlay-loader';
+   loadingOverlay.innerHTML = `
+<div>
+<div class="loader-horizontal"></div>
+<div class="loader-text">Processing your request...</div>
+</div>
+   `;
+   document.body.appendChild(loadingOverlay);
+   // Get form data
+   const form = document.getElementById('submit-form');
+   const formData = new FormData(form);
+   // Create URL with parameters
+   const scriptURL = 'https://script.google.com/macros/s/AKfycbxtyimz_2GR0x9S7D6qkK0-EFRD-tzT1YI4QWg7_PL2vPWCNKgCCtpWNzxidbmElbwF/exec';
+   const url = new URL(scriptURL);
+   // Append form data to URL as query parameters
+   for (const pair of formData.entries()) {
+     url.searchParams.append(pair[0], pair[1]);
+   }
+   // Use a hidden iframe to submit the form (avoids CORS issues)
+   const iframe = document.createElement('iframe');
+   iframe.style.display = 'none';
+   document.body.appendChild(iframe);
+   iframe.onload = function() {
+     // Remove loading overlay
+     document.body.removeChild(loadingOverlay);
+     // Show success message
+     alert("Warranty registration successful!")
+    //  const successSnackbar = document.querySelector('.warrantypopCls');
+    //  const successMessage = document.querySelector('.warrantyregCls');
+    //  successMessage.textContent = "Warranty registration successful!";
+    //  successSnackbar.style.display = 'block';
+     // Reset form
+     form.reset();
+     // Remove iframe after a delay
+    //  setTimeout(() => {
+    //    document.body.removeChild(iframe);
+    //    successSnackbar.style.display = 'none';
+    //  }, 3000);
+   };
+   iframe.onerror = function() {
+     // Remove loading overlay
+    //  document.body.removeChild(loadingOverlay);
+    //  // Show error message
+    //  const errorSnackbar = document.querySelector('.form-message-danger');
+    //  const errorMessage = errorSnackbar.querySelector('.snackbar-message');
+    //  errorMessage.textContent = "There was an error submitting your warranty registration. Please try again.";
+    //  errorSnackbar.style.display = 'block';
+     alert("There was an error submitting your warranty registration. Please try again.")
+    //  Remove iframe after a delay
+    //  setTimeout(() => {
+    //    document.body.removeChild(iframe);
+    //    errorSnackbar.style.display = 'none';
+    //  }, 3000);
+   };
+   // Set the iframe src to submit the form
+   iframe.src = url.toString();
+ }
+           
             document.getElementById('purchaseDate').max = new Date().toISOString().split("T")[0]
 
             $(document).ready(function () {
